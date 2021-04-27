@@ -234,78 +234,59 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Dashboard',
+            'url'  => 'admin_dashboard',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        [
+            'text' => 'User',
+            'url'  => 'Admin/Users',
             'icon' => 'fas fa-fw fa-user',
+            'can' => 'IsAdmin',
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Pengelolaan Barang',
+            'url'  => 'Admin/Kelola_Barang',
+            'icon' => 'fas fa-fw fa-square-full',
+            'can' => 'IsAdmin',
+        ],
+        [
+            'text' => 'Kategori Barang',
+            'url'  => 'Admin/Kelola_Kategori',
+            'icon' => 'fas fa-fw fa-folder',
+            'can' => 'IsAdmin',
+        ],
+        [
+            'text' => 'Merk Barang',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fab fa-fw fa-apple',
+            'can' => 'IsAdmin',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Laporan',
+            'icon'    => 'far fa-fw fa-sticky-note',
+            'can' => 'IsAdmin',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Laporan Barang Masuk',
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
+                    'text' => 'Laporan Barang Keluar',
                     'url'  => '#',
                 ],
             ],
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+
     ],
 
     /*

@@ -16,43 +16,47 @@
 @section('classes_body'){{ ($auth_type ?? 'login') . '-page' }}@stop
 
 @section('body')
-    <div class="{{ $auth_type ?? 'login' }}-box">
-
-        {{-- Logo --}}
-        <div class="{{ $auth_type ?? 'login' }}-logo">
-            <a href="{{ $dashboard_url }}">
-                <img src="{{ asset(config('adminlte.logo_img')) }}" height="50">
-                {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
-            </a>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6 no-gutters" style="padding-right: 0px;">
+        <div class="card" style="width: 400px; height: 363px;">
+        <img src="{{asset('img/277148.jpg')}}" alt="gb">
         </div>
+      </div>
+      <div class="col-sm-6 no-gutters" style="padding-left: 0px;">
+            <div class="{{ $auth_type ?? 'login' }}-box">
 
-        {{-- Card Box --}}
-        <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
+            {{-- Logo --}}
 
-            {{-- Card Header --}}
-            @hasSection('auth_header')
-                <div class="card-header {{ config('adminlte.classes_auth_header', '') }}">
-                    <h3 class="card-title float-none text-center">
-                        @yield('auth_header')
-                    </h3>
+
+            {{-- Card Box --}}
+            <div class="card"  style="width: 400px; height: 363px;">
+
+                {{-- Card Header
+                @hasSection('auth_header')
+                    <div class="card-header">
+                        <h3 class="card-title float-none">
+                            @yield('auth_header')
+                        </h3>
+                    </div>
+                @endif--}}
+
+                {{-- Card Body --}}
+                <div class="card-body {{ $auth_type ?? 'login' }}">
+                    @yield('auth_body')
                 </div>
-            @endif
 
-            {{-- Card Body --}}
-            <div class="card-body {{ $auth_type ?? 'login' }}-card-body {{ config('adminlte.classes_auth_body', '') }}">
-                @yield('auth_body')
+                {{-- Card Footer
+                @hasSection('auth_footer')
+                    <div class="card-footer">
+                        @yield('auth_footer')
+                    </div>
+                @endif
+                --}}
             </div>
-
-            {{-- Card Footer --}}
-            @hasSection('auth_footer')
-                <div class="card-footer {{ config('adminlte.classes_auth_footer', '') }}">
-                    @yield('auth_footer')
-                </div>
-            @endif
-
-        </div>
-
+      </div>
     </div>
+</div>
 @stop
 
 @section('adminlte_js')

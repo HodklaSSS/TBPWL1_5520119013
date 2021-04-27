@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Dashboard')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Dashboard</h1>
+    <h1 class="m-0 text-dark text-center">Dashboard</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,11 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
-                   Hayuk
+                   @if ($user->roles_id == 1)
+                        Anda login sebagai admin
+                    @else
+                        Anda login sebagai user
+                   @endif
                 </div>
             </div>
         </div>

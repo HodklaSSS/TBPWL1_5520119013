@@ -13,10 +13,10 @@
             <div class="card">
                 <div class="card-header"></div>
                 <div class="card-body">
-                    <a class="btn btn-primary" href="{{route ('tambah')}}"><i></i>Tambah User</a>
+                    <a class="btn btn-primary" href="{{route ('user.tambah')}}"><i></i>Tambah User</a>
                     <hr />
                     {{-- Table --}}
-                    <table id="table-data" class="table table-bordered">
+                    <table id="table-data" class="table table-bordered" style="word-break:break-all">
                         <thead>
                             <tr>
                                 <th>Foto</th>
@@ -46,14 +46,15 @@
 
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" id="btn-edit-buku" class="fas fa-pencil"
+                                            <button type="button" id="btn-edit-buku" class="btn"
                                                 data-toggle="modal" data-target="#editBukuModal"
-                                                data-id="{{ $user->id }}">Edit</button>
+                                                data-id="{{ $user->id }}">
+                                            <i class="fas fa-pencil-alt"></i> </button>
 
                                             <button type="button" id="btn-delete-user" class="btn btn-danger"
                                                 data-toggle="modal" data-target="#deleteUserModal"
                                                 data-id="{{ $user->id }}"
-                                                data-photo ="{{$user->photo}}">Hapus</button>
+                                                data-photo ="{{$user->photo}}"><i class="fas fa-trash-alt"></i></button>
 
                                         </div>
                                     </td>

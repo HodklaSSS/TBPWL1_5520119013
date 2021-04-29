@@ -19,7 +19,7 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-6 no-gutters" style="padding-right: 0px;">
-        <div class="card" style="width: 400px; height: 363px;">
+        <div class="card" style="width: 100%; height: 363px;">
         <img src="{{asset('img/277148.jpg')}}" alt="gb">
         </div>
       </div>

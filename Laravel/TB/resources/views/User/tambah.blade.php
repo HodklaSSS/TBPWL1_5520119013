@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form method="POST" action="{{ route('user.insert') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('insert.user') }}" enctype="multipart/form-data">
     @method('POST')
     @csrf
         <div class="form-group">

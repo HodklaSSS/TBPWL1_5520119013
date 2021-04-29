@@ -34,8 +34,8 @@
                                     <td>
                                         @if ($product->photo !== null)
                                             <img class="img-thumbnail"
-                                                src="{{ asset('storage/photo_product/' . $product->photo) }}"
-                                                alt="{{ "photo_product_".$product->name }}" width="100px">
+                                                src="{{ asset('storage/photo_barang/' . $product->photo) }}"
+                                                alt="{{ "photo_barang_".$product->name }}" width="100px">
                                         @else
                                             [Foto]
                                         @endif

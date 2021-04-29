@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product as Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class KelolaBarangController extends Controller
 {
@@ -48,6 +49,7 @@ class KelolaBarangController extends Controller
     {
         $product = Product::find($req->get('id'));
         $product->delete();
+        Storage::delete('public/photo_barang/' . $req->get('photo'));
 
         return redirect()->route('admin.barang');
     }

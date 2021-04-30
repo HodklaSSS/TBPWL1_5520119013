@@ -42,14 +42,12 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->password }}</td>
-                                    <td>{{ $user->role }}</td>
+                                    <td>{{ $user->roles->name }}</td>
 
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" id="btn-edit-buku" class="btn"
-                                                data-toggle="modal" data-target="#editBukuModal"
-                                                data-id="{{ $user->id }}">
-                                            <i class="fas fa-pencil-alt"></i> </button>
+                                            <a  class="btn" href="/Admin/Users/edit/{{$user->id}}">
+                                            <i class="fas fa-pencil-alt"></i> </a>
 
                                             <button type="button" id="btn-delete-user" class="btn btn-danger"
                                                 data-toggle="modal" data-target="#deleteUserModal"

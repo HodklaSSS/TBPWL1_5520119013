@@ -48,14 +48,13 @@
 
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" id="btn-edit-buku" class="fas fa-pencil"
-                                                data-toggle="modal" data-target="#editBukuModal"
-                                                data-id="{{ $user->id }}">Edit</button>
+                                            <a  class="btn" href="/Admin/Kelola_Barang/edit/{{$product->id}}">
+                                            <i class="fas fa-pencil-alt"></i> </a>
 
                                             <button type="button" id="btn-delete-barang" class="btn btn-danger"
                                                 data-toggle="modal" data-target="#deleteBarangModal"
                                                 data-id="{{ $product->id }}"
-                                                data-photo ="{{$product->photo}}">Hapus</button>
+                                                data-photo ="{{$product->photo}}"><i class="fas fa-trash-alt"></i></button>
 
                                         </div>
                                     </td>

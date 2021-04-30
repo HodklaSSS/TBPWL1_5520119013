@@ -267,7 +267,7 @@ return [
         ],
         [
             'text' => 'Merk Barang',
-            'url'  => 'admin/settings',
+            'url'  => 'Admin/Kelola_Merk',
             'icon' => 'fab fa-fw fa-apple',
             'can' => 'IsAdmin',
         ],

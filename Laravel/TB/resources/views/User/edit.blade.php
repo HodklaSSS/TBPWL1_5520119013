@@ -1,36 +1,41 @@
 @extends('adminlte::page')
 
-@section('title', 'Penambahan User')
+@section('title', 'Edit User')
 
 @section('content_header')
-    <h1 class="m-0 text-dark text-center">TAMBAH USER</h1>
+    <h1 class="m-0 text-dark text-center">EDIT USER</h1>
 @stop
 
 @section('content')
-<form method="POST" action="{{ route('tambah') }}" enctype="multipart/form-data">
-    @method('POST')
-    @csrf
+@foreach ($datas as $data)
+    
+
+<form method="POST" action="{{$data->id}}" enctype="multipart/form-data">
+    
+    {{csrf_field()}}
+    <input type="hidden" name="id" value="{{$data->id}}">
+    <input type="hidden" name="old_photo" value="{{$data->photo}}">
         <div class="form-group">
             <label for="inputNama">Nama</label>
-            <input type="text" class="form-control" id="inputnama" name="name">
+            <input type="text" required="required" value="{{$data->name}}" class="form-control" id="inputnama" name="name">
         </div>
         <div class="form-group">
             <label for="inputUsername">Username</label>
-            <input type="text" class="form-control" id="inputusername" name="username">
+            <input type="text" required="required" value="{{$data->username}}" class="form-control" id="inputusername" name="username">
         </div>
         <div class="form-group">
             <label for="inputemail">Email</label>
-            <input type="text" class="form-control" id="inputemail" name="email">
+            <input type="text" required="required" value="{{$data->email}}" class="form-control" id="inputemail" name="email">
         </div>
         <div class="form-group">
             <label for="inputpassword">Password</label>
-            <input type="text" class="form-control" id="inputpassword" name="password">
+            <input type="text" required="required" value="{{$data->password}}" class="form-control" id="inputpassword" name="password">
         </div>
         <div class="form-group">
             <label for="inputRole">Role</label>
             <select name="role" id="inputRole">
-                @foreach ($roles as $role)
-                <option value="{{$role->id}}">{{$role->name}}</option>
+                @foreach ($datas->roles as $item)
+                <option value="{{$item->id}}" {{ $data->roles_id == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -42,35 +47,7 @@
             ></i>Kembali</a>
         <button type="submit" class="btn btn-primary mr-auto">Kirim</button>
 </form>
-
+@endforeach
 @stop
 @section('js')
-    <script>
-        $(function() {
-            $(document).on('click', '#btn-edit-buku', function() {
-                let id = $(this).data('id');
-                $('#image-area').empty();
-                $.ajax({
-                    type: "GET",
-                    url: `${baseUrl}/admin/api/dataBuku/${id}`,
-                    dataType: "JSON",
-                    success: function(res) {
-                        $('#editId').val(res.id);
-                        $('#editJudul').val(res.judul);
-                        $('#editPenerbit').val(res.penerbit);
-                        $('#editTahun').val(res.tahun);
-                        $('#editPenulis').val(res.penulis);
-                        $('#editOldCover').val(res.cover);
-                        if (res.cover !== null) {
-                            $('#image-area').append(
-                                `<img class="img-thumbnail" src="${baseUrl}/storage/cover_buku/${res.cover}" width="200px" />`
-                            );
-                        } else {
-                            $('#image-area').append(`[Gambar tidak tersedia]`);
-                        }
-                    },
-                });
-            });
-
-    </script>
 @stop

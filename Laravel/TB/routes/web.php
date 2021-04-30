@@ -46,7 +46,13 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])
         ->name('user.hapus')
         ->middleware('is_admin');
 
+        Route::get('Admin/Users/edit/{id}', [\App\Http\Controllers\UserController::class, 'edituser'])
+        ->name('User.edit')
+        ->middleware('is_admin');
 
+        Route::post('Admin/Users/edit/{id}', [App\Http\Controllers\UserController::class, 'update'])
+        ->name('update.user')
+        ->middleware('is_admin');
 
         // End Page Users
 
@@ -68,6 +74,14 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])
         ->name('barang.hapus')
         ->middleware('is_admin');
 
+        Route::get('Admin/Kelola_Barang/edit/{id}', [\App\Http\Controllers\KelolaBarangController::class, 'editBarang'])
+        ->name('barang.edit')
+        ->middleware('is_admin');
+
+        Route::post('Admin/Kelola_Barang/edit/{id}', [App\Http\Controllers\KelolaBarangController::class, 'update'])
+        ->name('update.barang')
+        ->middleware('is_admin');
+
         // End Page Barang
 
         // Page Kategori
@@ -87,7 +101,37 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])
         ->name('kategori.hapus')
         ->middleware('is_admin');
 
-        // End Page Kategori 
-        Route::get('Admin/merk', [App\Http\Controllers\HomeController::class, 'index'])
+        Route::get('Admin/Kelola_Kategori/edit/{id}', [\App\Http\Controllers\KategoriBarangController::class, 'editKategori'])
+        ->name('kategori.edit')
+        ->middleware('is_admin');
+
+        Route::post('Admin/Kelola_Kategori/edit/{id}', [App\Http\Controllers\KategoriBarangController::class, 'update'])
+        ->name('update.kategori')
+        ->middleware('is_admin');
+
+        // End Page Kategori
+
+        // Page Brand
+        Route::get('Admin/Kelola_Merk', [App\Http\Controllers\MerekBarangController::class, 'index'])
         ->name('admin.merk')
+        ->middleware('is_admin');
+
+        Route::get('Admin/Kelola_Merk/Tambah', [App\Http\Controllers\MerekBarangController::class, 'tbmerek'])
+        ->name('admin.merk.tambah')
+        ->middleware('is_admin');
+
+        Route::post('Admin/Kelola_Merk/Tambah', [\App\Http\Controllers\MerekBarangController::class, 'insert'])
+        ->name('insert')
+        ->middleware('is_admin');
+
+        Route::delete('Admin/Kelola_Merk/hapus', [\App\Http\Controllers\MerekBarangController::class, 'hpsmerk'])
+        ->name('merk.hapus')
+        ->middleware('is_admin');
+
+        Route::get('Admin/Kelola_Merk/edit/{id}', [\App\Http\Controllers\MerekBarangController::class, 'editMerek'])
+        ->name('merk.edit')
+        ->middleware('is_admin');
+
+        Route::post('Admin/Kelola_Merk/edit/{id}', [App\Http\Controllers\MerekBarangController::class, 'update'])
+        ->name('update.merk')
         ->middleware('is_admin');

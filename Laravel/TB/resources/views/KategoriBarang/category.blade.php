@@ -21,6 +21,7 @@
                             <tr>
                                 <th>Nama</th>
                                 <th>Keterangan</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,13 +31,13 @@
                                     <td>{{ $category->description }}</td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" id="btn-edit-category" class="fas fa-pencil"
-                                                data-toggle="modal" data-target="#editBukuModal"
-                                                data-id="{{ $category->id }}">Edit</button>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <a  class="btn" href="/Admin/Kelola_Kategori/edit/{{$category->id}}">
+                                                <i class="fas fa-pencil-alt"></i> </a>
 
                                             <button type="button" id="btn-delete-Category" class="btn btn-danger"
                                                 data-toggle="modal" data-target="#deleteCategoryModal"
-                                                data-id="{{ $category->id }}">Hapus</button>
+                                                data-id="{{ $category->id }}"><i class="fas fa-trash-alt"></i></button>
 
                                         </div>
                                     </td>

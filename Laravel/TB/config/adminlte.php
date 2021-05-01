@@ -244,7 +244,7 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'Dashboard',
-            'url'  => 'admin_dashboard',
+            'url'  => 'dashboard',
             'icon' => 'fas fa-fw fa-home',
         ],
         [
@@ -278,11 +278,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Laporan Barang Masuk',
-                    'url'  => '#',
+                    'url'  => 'Admin/LaporanMasuk',
                 ],
                 [
                     'text' => 'Laporan Barang Keluar',
-                    'url'  => '#',
+                    'url'  => 'Admin/LaporanKeluar',
                 ],
             ],
         ],

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Laporan;
 use Illuminate\Http\Request;
 use App\Models\Product as Product;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,11 @@ class KelolaBarangController extends Controller
 
     public function insertBarang(Request $request)
     {
+        $laporan = new Laporan();
+        $laporan->name = $request->get('name');
+        $laporan->qty = $request->get('qty');
+        $laporan->jenis = 'masuk';
+        $laporan->save();
         $product = new Product();
         $product->name = $request->get('name');
         $product->qty = $request->get('qty');
@@ -48,6 +54,11 @@ class KelolaBarangController extends Controller
     }
     public function hpsbarang(Request $req)
     {
+        $laporan = new Laporan();
+        $laporan->name = $req->get('name');
+        $laporan->qty = $req->get('qty');
+        $laporan->jenis = 'keluar';
+        $laporan->save();
         $product = Product::find($req->get('id'));
         $product->delete();
         Storage::delete('public/photo_barang/' . $req->get('photo'));

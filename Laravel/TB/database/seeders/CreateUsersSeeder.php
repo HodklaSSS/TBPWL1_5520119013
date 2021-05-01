@@ -17,7 +17,7 @@ class CreateUsersSeeder extends Seeder
                 'email' => 'user_a@mail.com',
                 'password' => Hash::make(123456),
                 'photo' => 'user.jpg',
-                'roles_id' => 2
+                'roles_id' => 2,
             ],
             [
                 'name' => 'Admin A',
@@ -25,7 +25,7 @@ class CreateUsersSeeder extends Seeder
                 'email' => 'admin_a@mail.com',
                 'password' => Hash::make(123456),
                 'photo' => 'admin.jpg',
-                'roles_id' => 1
+                'roles_id' => 1,
             ],
         ];
 

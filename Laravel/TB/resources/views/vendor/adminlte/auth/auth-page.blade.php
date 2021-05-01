@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-sm-6 no-gutters" style="padding-right: 0px;">
         <div class="card" style="width: 100%; height: 363px;">
-        <img src="{{asset('img/277148.jpg')}}" alt="gb">
+        <img src="{{asset('img/login.jpg')}}" alt="gb" style="height: 363px;">
         </div>
       </div>
       <div class="col-sm-6 no-gutters" style="padding-left: 0px;">

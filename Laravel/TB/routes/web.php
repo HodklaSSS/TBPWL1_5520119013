@@ -19,14 +19,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// dashboard
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])
         ->name('dashboard')
         ->middleware('auth');
 
-        Route::get('/admin_dashboard', [App\Http\Controllers\AdminController::class, 'index'])
-        ->name('admin.dashboard')
-        ->middleware('is_admin');
+        Route::get('/admin_dashboard', [App\Http\Controllers\HomeController::class, 'indexadmin'])
+        ->name('admin_dashboard')
+        ->middleware('auth');
 
+// end dashboard
 
         // Page Users
 
@@ -135,3 +137,31 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])
         Route::post('Admin/Kelola_Merk/edit/{id}', [App\Http\Controllers\MerekBarangController::class, 'update'])
         ->name('update.merk')
         ->middleware('is_admin');
+
+        // Laporan
+
+        Route::get('Admin/LaporanMasuk', [\App\Http\Controllers\LaporanController::class, 'indexmasuk'])
+        ->name('laporan.masuk')
+        ->middleware('is_admin');
+
+        
+        Route::get('Admin/LaporanKeluar', [\App\Http\Controllers\LaporanController::class, 'indexkeluar'])
+        ->name('laporan.keluar')
+        ->middleware('is_admin');
+
+        Route::get('Admin/LaporanMasuk/printMasuk', [\App\Http\Controllers\LaporanController::class, 'printMasuk'])
+        ->name('admin.print.masuk')
+        ->middleware('is_admin');
+
+        Route::get('Admin/LaporanMasuk/printKeluar', [\App\Http\Controllers\LaporanController::class, 'printKeluar'])
+        ->name('admin.print.keluar')
+        ->middleware('is_admin');
+        // beli
+
+        Route::get('dashboard/beli/{id}', [\App\Http\Controllers\HomeController::class, 'indexbeli'])
+        ->name('indexbeli')
+        ->middleware('auth');
+
+        Route::post('dashboard/beli/{id}', [App\Http\Controllers\HomeController::class, 'beli'])
+        ->name('beli')
+        ->middleware('auth');

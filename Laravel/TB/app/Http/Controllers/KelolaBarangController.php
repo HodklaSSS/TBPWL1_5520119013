@@ -54,11 +54,6 @@ class KelolaBarangController extends Controller
     }
     public function hpsbarang(Request $req)
     {
-        $laporan = new Laporan();
-        $laporan->name = $req->get('name');
-        $laporan->qty = $req->get('qty');
-        $laporan->jenis = 'keluar';
-        $laporan->save();
         $product = Product::find($req->get('id'));
         $product->delete();
         Storage::delete('public/photo_barang/' . $req->get('photo'));

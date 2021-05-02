@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <label for="inputpassword">Password</label>
-            <input type="text" required="required" value="{{$data->password}}" class="form-control" id="inputpassword" name="password">
+            <input type="password" required="required" value="{{$data->password}}" class="form-control" id="inputpassword" name="password">
         </div>
         <div class="form-group">
             <label for="inputRole">Role</label>

@@ -25,7 +25,7 @@ class LaporanController extends Controller
     public function printMasuk()
     {
         $datas = Laporan::all();
-
+        PDF::setOptions(['isJavascriptEnabled' => true]);
         $pdf = PDF::loadview('printMasuk', ['datas' => $datas]);
         return $pdf->download('laporanMasuk.pdf');
     }
@@ -34,6 +34,7 @@ class LaporanController extends Controller
         $datas = Laporan::all();
 
         $pdf = PDF::loadview('printKeluar', ['datas' => $datas]);
+        PDF::setOptions(['isJavascriptEnabled' => true]);
         return $pdf->download('laporanKeluar.pdf');
     }
 }

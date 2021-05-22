@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header"></div>
                 <div class="card-body">
-                    <a class="btn btn-primary" href="{{route ('admin.kategori.tambah')}}"><i></i>Tambah Barang</a>
+                    <a class="btn btn-primary" href="{{route ('admin.kategori.tambah')}}"><i></i>Tambah Kategori</a>
                     <hr />
                     {{-- Table --}}
                     <table id="table-data" class="table table-bordered">

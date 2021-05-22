@@ -14,11 +14,12 @@
 </head>
 
 <body>
-    <h1 class="text-center">Barang Keluar</h1>
+    <h1 class="text-center">Laporan Barang Keluar</h1>
     <br>
     <table id="table-data" class="table table-bordered">
         <thead>
             <tr>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Tanggal Keluar</th>
                 <th>Jumlah</th>
@@ -28,6 +29,7 @@
             @if ($item->jenis == 'keluar')
                 
                 <tr>
+                    <td>{{$key++}}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>{{ $item->qty }}</td>
